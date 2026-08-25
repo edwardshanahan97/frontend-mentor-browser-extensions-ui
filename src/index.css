@@ -1,0 +1,61 @@
+/* Imports */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Variables */
+
+:root {
+  --color-primary: #c7221a;
+  --color-primary-hover: #de473f;
+  --color-light: #fbfdfe;
+
+  --font-family: "Noto Sans", sans-serif;
+}
+
+[data-theme="light"] {
+  --color-text-main: #09153e;
+  --color-text-secondary: #545969;
+  --bg-main: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --bg-content: #fbfdfe;
+  --border-content: #d6e2f5;
+  --bg-toggle: #ededed;
+  --bg-toggle-hover: #c7c7c7;
+  --bg-button: #fbfdfe;
+  --border-button: #d6e2f5;
+  --box-shadow: 0 1px 5px rgba(194, 206, 225, 0.22);
+}
+
+[data-theme="dark"] {
+  --color-text-main: #fbfdfe;
+  --color-text-secondary: #c7c7c7;
+  --bg-main: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --bg-content: #212636;
+  --border-content: #545969;
+  --bg-toggle: #2f364b;
+  --bg-toggle-hover: #545969;
+  --bg-button: #2f364b;
+  --border-button: #545969;
+}
+
+/* Global */
+
+html {
+  font-size: 62.5%;
+}
+
+*::before,
+*,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+}
+
+.app[data-theme] {
+  background-color: var(--bg-main);
+  min-height: 100vh;
+}
