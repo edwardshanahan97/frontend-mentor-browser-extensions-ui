@@ -1,6 +1,8 @@
-# Frontend Mentor - Browser extensions manager UI solution
+# Frontend Mentor - Browser Extensions Manager UI
 
-This is a solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is my solution to the [Browser extensions manager UI challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp).
+
+The challenge was to build a responsive browser extension manager where users can filter, enable, disable and remove extensions, as well as switch between light and dark themes.
 
 ## Table of contents
 
@@ -11,11 +13,8 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
-  - [AI Collaboration](#ai-collaboration)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -24,103 +23,82 @@ This is a solution to the [Browser extensions manager UI challenge on Frontend M
 Users should be able to:
 
 - Toggle extensions between active and inactive states
-- Filter active and inactive extensions
+- Filter extensions by active or inactive status
 - Remove extensions from the list
-- Select their color theme
-- View the optimal layout for the interface depending on their device's screen size
-- See hover and focus states for all interactive elements on the page
+- Switch between light and dark themes
+- View a responsive layout across different screen sizes
+- See hover and focus states for interactive elements
 
 ### Screenshot
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution on GitHub](https://github.com/edwardshanahan97/frontend-mentor-browser-extensions-ui)
+- [Live site](https://edwardshanahan97.github.io/frontend-mentor-browser-extensions-ui/)
 
 ## My process
 
 ### Built with
 
-- Semantic HTML5 markup
+- Semantic HTML5
 - CSS custom properties
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- React
+- Vite
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project gave me more practice working with React state and updating arrays without mutating the existing state.
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
+I used `filter()` to display extensions based on their status and to remove extensions from the list. I also used `map()` to update the active state of an individual extension.
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
+const toggleExtension = (id) => {
+  setExtensions((prev) =>
+    prev.map((extension) =>
+      extension.id === id
+        ? { ...extension, isActive: !extension.isActive }
+        : extension,
+    ),
+  );
 };
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I also created the toggle switch using a hidden checkbox and CSS sibling selectors. This was something I hadn't built before.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+```css
+.extension-card__switch input:checked + span {
+  background-color: var(--bg-switch-active);
+}
 
-### Continued development
+.extension-card__switch input:checked + span::before {
+  transform: translateX(16px);
+}
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+Another thing I learned was how to detect the user's preferred system theme with `prefers-color-scheme` and use that as the initial theme.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```js
+const prefersDarkMode = window.matchMedia(
+  "(prefers-color-scheme: dark)",
+).matches;
+
+return prefersDarkMode ? "dark" : "light";
+```
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [GeeksforGeeks - Create a toggle switch using HTML and CSS](https://www.geeksforgeeks.org/css/how-to-create-toggle-switch-by-using-html-and-css/) - Helped me understand the CSS structure needed to create the extension toggle switch.
 
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [GeeksforGeeks - prefers-color-scheme and dark mode](https://www.geeksforgeeks.org/css/how-to-create-dark-mode-using-prefer-color-scheme-media-query/) - Useful for understanding how to detect the user's system colour scheme.
 
-### AI Collaboration
-
-Describe how you used AI tools (if any) during this project. This helps demonstrate your ability to work effectively with AI assistants.
-
-- What tools did you use (e.g., ChatGPT, Claude, GitHub Copilot)?
-- How did you use them (e.g., debugging, generating boilerplate, brainstorming solutions)?
-- What worked well? What didn't?
-
-**Note: Delete this note and the content above if you didn't use AI, or replace with your own experience.**
+- [React Documentation](https://react.dev/) - Used as a reference while working with state and updating arrays.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Frontend Mentor - [@edwardshanahan97](https://www.frontendmentor.io/profile/edwardshanahan97)
+- GitHub - [@edwardshanahan97](https://github.com/edwardshanahan97)
