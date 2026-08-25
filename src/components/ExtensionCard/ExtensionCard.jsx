@@ -19,7 +19,7 @@ const ExtensionCard = ({
         <p className="extension-card__description">{description}</p>
       </div>
 
-      <div className="extension-card__buttons">
+      <div className="extension-card__actions">
         <button
           onClick={() => removeExtension(id)}
           className="extension-card__button"

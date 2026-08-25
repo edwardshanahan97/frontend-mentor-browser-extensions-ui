@@ -49,10 +49,11 @@
   --border-remove: var(--color-neutral-300);
 
   --text-remove-hover: var(--color-neutral-0);
+  --bg-remove-hover: var(--color-red-700);
   --border-remove-hover: var(--color-red-700);
 
   --bg-switch: var(--color-neutral-300);
-  --bg-switch-checkbox: var(--color-neutral-0);
+  --bg-switch-circle: var(--color-neutral-0);
 
   --bg-switch-active: var(--color-red-700);
 }
@@ -81,13 +82,15 @@
   --border-status-active: var(--color-red-500);
 
   --text-remove: var(--color-neutral-0);
+  --bg-remove: var(--color-neutral-600);
   --border-remove: var(--color-neutral-600);
 
   --text-remove-hover: var(--color-neutral-900);
+  --bg-remove-hover: var(--color-red-400);
   --border-remove-hover: var(--color-red-400);
 
   --bg-switch: var(--color-neutral-600);
-  --bg-switch-checkbox: var(--color-neutral-0);
+  --bg-switch-circle: var(--color-neutral-0);
 
   --bg-switch-active: var(--color-red-400);
 }

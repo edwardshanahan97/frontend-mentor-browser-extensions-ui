@@ -1,0 +1,96 @@
+.extension-card {
+  display: grid;
+  grid-template-columns: 6rem 1fr;
+  background-color: var(--bg-content);
+  border-radius: 2rem;
+  padding: 2rem;
+  row-gap: 2.4rem;
+  column-gap: 1.6rem;
+}
+
+.extension-card h2 {
+  color: var(--text-main);
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.extension-card p {
+  color: var(--text-secondary);
+  font-size: 1.6rem;
+  line-height: 140%;
+}
+
+.extension-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+}
+
+.extension-card__actions button {
+  color: var(--text-remove);
+  font-size: 1.4rem;
+  background-color: var(--bg-remove);
+  border: 1px solid var(--border-remove);
+  border-radius: 999px;
+  padding: 0.8rem 1.6rem;
+  cursor: pointer;
+}
+
+.extension-card__actions button:focus-visible {
+  border: none;
+  outline-offset: 0.2rem;
+  outline: 2px solid var(--outline-color);
+  border-radius: 999px;
+}
+
+.extension-card__actions button:hover {
+  color: var(--text-remove-hover);
+  background-color: var(--bg-remove-hover);
+  border: 1px solid var(--border-remove-hover);
+}
+
+.extension-card__switch {
+  display: inline-block;
+  width: 3.6rem;
+  height: 2rem;
+  position: relative;
+}
+
+.extension-card__switch input {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.extension-card__switch span {
+  background-color: var(--bg-switch);
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: absolute;
+  border-radius: 999px;
+}
+
+.extension-card__switch span::before {
+  background-color: var(--bg-switch-circle);
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  left: 0.2rem;
+  right: 0.2rem;
+  position: absolute;
+  content: "";
+  display: inline-block;
+}
+
+.extension-card__switch input:checked + span {
+  background-color: var(--bg-switch-active);
+}
+
+.extension-card__switch input:checked + span::before {
+  transform: translateX(16px);
+}
