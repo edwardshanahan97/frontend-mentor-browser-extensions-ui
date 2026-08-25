@@ -52,10 +52,12 @@ html {
 }
 
 body {
+  color: var(--color-text-main);
   font-family: var(--font-family);
 }
 
 .app[data-theme] {
-  background-color: var(--bg-main);
+  background: var(--bg-main);
   min-height: 100vh;
+  width: 100%;
 }
