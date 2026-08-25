@@ -1,7 +1,18 @@
+import Navbar from "./components/Navbar/Navbar";
+import Filters from "./components/Filters/Filters";
+import ExtensionsList from "./components/ExtensionsList/ExtensionsList";
+import Container from "./components/Container/Container";
+
 const App = () => {
   return (
     <main>
-      <h1>Hello World!</h1>
+      <Container>
+        <Navbar />
+
+        <Filters />
+
+        <ExtensionsList />
+      </Container>
     </main>
   );
 };
