@@ -8,10 +8,14 @@ const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <nav onClick={toggleTheme} className="navbar">
+    <nav className="navbar">
       <Logo />
 
-      <button className="navbar__toggle">
+      <button
+        onClick={toggleTheme}
+        className="navbar__toggle"
+        aria-label="Toggle Theme"
+      >
         {theme === "dark" ? (
           <img src={SunIcon} alt="Sun Icon" />
         ) : (
