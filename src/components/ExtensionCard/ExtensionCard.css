@@ -94,3 +94,8 @@
 .extension-card__switch input:checked + span::before {
   transform: translateX(16px);
 }
+
+.extension-card__switch input:focus-visible + span {
+  outline: 2px solid var(--outline-color);
+  outline-offset: 0.2rem;
+}

@@ -29,6 +29,7 @@ const ExtensionCard = ({
 
         <label className="extension-card__switch">
           <input
+            aria-label="Toggle active/inactive"
             onChange={() => toggleExtension(id)}
             type="checkbox"
             checked={isActive}

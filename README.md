@@ -14,6 +14,9 @@ The challenge was to build a responsive browser extension manager where users ca
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
 - [Author](#author)
 
 ## Overview
@@ -97,6 +100,51 @@ return prefersDarkMode ? "dark" : "light";
 - [GeeksforGeeks - prefers-color-scheme and dark mode](https://www.geeksforgeeks.org/css/how-to-create-dark-mode-using-prefer-color-scheme-media-query/) - Useful for understanding how to detect the user's system colour scheme.
 
 - [React Documentation](https://react.dev/) - Used as a reference while working with state and updating arrays.
+
+## Getting started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/edwardshanahan97/frontend-mentor-browser-extensions-ui.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd frontend-mentor-browser-extensions-ui
+```
+
+Install the dependencies:
+
+```
+npm install
+```
+
+### Run locally
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL shown in the terminal.
+
+### Create a production build
+
+```bash
+npm run build
+```
 
 ## Author
 
