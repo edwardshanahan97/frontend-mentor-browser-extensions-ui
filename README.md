@@ -110,8 +110,6 @@ return prefersDarkMode ? "dark" : "light";
 
 ### Installation
 
-### Installation
-
 Clone the repository:
 
 ```bash
